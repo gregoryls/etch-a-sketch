@@ -6,6 +6,7 @@ function createColumns(){
     let column = document.createElement('div');
     let grid = document.querySelector('.flex-grid');
     let row = document.createElement('div');
+    row.setAttribute('class','row');
     column.setAttribute('class','col');
     column.appendChild(row);
     for (let i =0; i<15; i++){

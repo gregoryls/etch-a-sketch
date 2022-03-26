@@ -1,0 +1,16 @@
+.flex-grid{
+    display: flex;
+    aspect-ratio: 1/1;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 6.25%;
+}
+.row{
+    border: 1px solid;
+    flex-grow: 1;
+  
+    
+    aspect-ratio: 1/1;
+}
