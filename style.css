@@ -1,16 +1,21 @@
 .flex-grid{
     display: flex;
+    max-width: 640px;
     aspect-ratio: 1/1;
 }
 .col{
     display: flex;
     flex-direction: column;
     flex: 0 0 6.25%;
+    margin: 0;
 }
 .row{
     border: 1px solid;
-    flex-grow: 1;
-  
+    
+    
     
     aspect-ratio: 1/1;
+}
+.mouse-enter{
+    background-color: red;
 }

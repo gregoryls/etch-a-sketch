@@ -19,4 +19,15 @@ function createColumns(){
         grid.appendChild((document.querySelector('.col')).cloneNode(true));
     }
 }
+
+function hoverButtonCreation() {
+    let squares = document.querySelectorAll('.row');
+    squares.forEach((row) => {
+        row.addEventListener('mouseover', () => {
+            // row.setAttribute('style', 'background-color: red')
+            row.classList.add('mouse-enter');
+        });
+    });
+}
 createColumns();
+hoverButtonCreation();
