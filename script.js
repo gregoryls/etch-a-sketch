@@ -32,5 +32,18 @@ function hoverButtonCreation() {
         });
     });
 }
+function clearGrid() {
+    let grid = document.querySelector('.flex-grid');
+    while (grid.firstChild){
+        grid.removeChild(grid.firstChild);
+    }
+}
+
+let resetButton = document.querySelector('.reset')
+resetButton.addEventListener('click', () => {
+    clearGrid();
+    createColumns(parseInt(prompt('Please enter a number between 1-100')));
+    hoverButtonCreation();
+});
 createColumns(16);
 hoverButtonCreation();
