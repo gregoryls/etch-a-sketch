@@ -11,13 +11,11 @@
 }
 .row{
     border: 1px solid;
-    
-    
-    
+    background-color: transparent;
     aspect-ratio: 1/1;
 }
 .mouse-enter{
-    background-color: red;
+    background-color: rgb(84, 36, 122);
 }
 .reset{
     margin-bottom: 22px;

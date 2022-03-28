@@ -28,7 +28,8 @@ function hoverButtonCreation() {
     squares.forEach((row) => {
         row.addEventListener('mouseenter', () => {
             // row.setAttribute('style', 'background-color: red')
-            row.classList.add('mouse-enter');
+            //row.classList.add('mouse-enter');
+            row.style.backgroundColor = randomColor();
         });
     });
 }
@@ -37,6 +38,15 @@ function clearGrid() {
     while (grid.firstChild){
         grid.removeChild(grid.firstChild);
     }
+}
+
+function randomColor(){
+    const hex = '0123456789ABCDEF';
+    let color = '#';
+    for (let i=0;i<6;i++){
+        color += hex[Math.floor(Math.random()*16)];
+    }
+    return color;
 }
 
 let resetButton = document.querySelector('.reset')
