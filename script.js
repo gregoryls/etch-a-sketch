@@ -10,6 +10,7 @@ function createColumns(numColumns){
     let grid = document.querySelector('.flex-grid');
     let row = document.createElement('div');
     row.setAttribute('class','row');
+    row.style.opacity = 0
     column.setAttribute('class','col');
     column.appendChild(row);
     for (let i =0; i<(numColumns-1); i++){
@@ -27,9 +28,10 @@ function hoverButtonCreation() {
     let squares = document.querySelectorAll('.row');
     squares.forEach((row) => {
         row.addEventListener('mouseenter', () => {
-            // row.setAttribute('style', 'background-color: red')
             //row.classList.add('mouse-enter');
-            row.style.backgroundColor = randomColor();
+            //row.style.backgroundColor = randomColor();
+            const opacity = row.style.opacity;           
+            row.style.opacity = opacityIncrement(parseFloat(opacity));
         });
     });
 }
@@ -47,6 +49,12 @@ function randomColor(){
         color += hex[Math.floor(Math.random()*16)];
     }
     return color;
+}
+
+function opacityIncrement(opacity){
+    if (opacity === 1) return;
+    opacity += 0.1
+    return opacity;
 }
 
 let resetButton = document.querySelector('.reset')
