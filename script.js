@@ -10,7 +10,6 @@ function createColumns(numColumns){
     let grid = document.querySelector('.flex-grid');
     let row = document.createElement('div');
     row.setAttribute('class','row');
-    row.style.opacity = 0
     column.setAttribute('class','col');
     column.appendChild(row);
     for (let i =0; i<(numColumns-1); i++){
@@ -24,17 +23,36 @@ function createColumns(numColumns){
     }
 }
 
-function hoverButtonCreation() {
+function hoverCreationOpacity() {
     let squares = document.querySelectorAll('.row');
     squares.forEach((row) => {
+        row.style.opacity = 0;
+        row.style.backgroundColor = 'black';
         row.addEventListener('mouseenter', () => {
-            //row.classList.add('mouse-enter');
-            //row.style.backgroundColor = randomColor();
             const opacity = row.style.opacity;           
             row.style.opacity = opacityIncrement(parseFloat(opacity));
         });
     });
 }
+
+function hoverCreationRandomRGB() {
+    let squares = document.querySelectorAll('.row');
+    squares.forEach((row) => {
+        row.addEventListener('mouseenter', () => {
+            row.style.backgroundColor = randomColor();
+        });
+    });
+}
+
+function hoverCreationMonochrome() {
+    let squares = document.querySelectorAll('.row');
+    squares.forEach((row) => {
+        row.addEventListener('mouseenter', () => {
+            row.classList.add('mouse-enter');   
+        });
+    });
+}
+
 function clearGrid() {
     let grid = document.querySelector('.flex-grid');
     while (grid.firstChild){
@@ -57,11 +75,27 @@ function opacityIncrement(opacity){
     return opacity;
 }
 
-let resetButton = document.querySelector('.reset')
-resetButton.addEventListener('click', () => {
+let resetButtonOpacity = document.querySelector('.reset-opacity')
+resetButtonOpacity.addEventListener('click', () => {
     clearGrid();
     createColumns(parseInt(prompt('Please enter a number between 1-100')));
-    hoverButtonCreation();
+    hoverCreationOpacity();
 });
+
+let resetButtonMonochrome = document.querySelector('.reset-monochrome')
+resetButtonMonochrome.addEventListener('click', () => {
+    clearGrid();
+    createColumns(parseInt(prompt('Please enter a number between 1-100')));
+    hoverCreationMonochrome();
+});
+
+let resetButtonRandom = document.querySelector('.reset-random-rgb')
+resetButtonRandom.addEventListener('click', () => {
+    clearGrid();
+    createColumns(parseInt(prompt('Please enter a number between 1-100')));
+    hoverCreationRandomRGB();
+});
+
+
 createColumns(16);
-hoverButtonCreation();
+hoverCreationRandomRGB();
