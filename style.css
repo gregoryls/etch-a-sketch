@@ -12,12 +12,11 @@
 }
 .row{
     border: 1px solid rgba(0,0,0,1);
-    /* background-color: rgb(0,0,0); */
     aspect-ratio: 1/1;
 }
 .mouse-enter{
     background-color: rgb(34, 139, 131);
 }
-.reset{
+.reset-buttons{
     margin-bottom: 22px;
 }
